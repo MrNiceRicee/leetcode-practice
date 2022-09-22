@@ -1,6 +1,6 @@
 import { expect } from "../expect";
 
-function lengthOfLongestSubstring(s: string): number {
+export function lengthOfLongestSubstring(s: string): number {
   // base check
   if (!s?.length) {
     return 0;
@@ -26,12 +26,10 @@ function lengthOfLongestSubstring(s: string): number {
   return max;
 }
 
-export const isSubsequenceTest = () => {
+export const lengthOfLongestSubstringTest = () => {
   expect(lengthOfLongestSubstring("abcabcbb"), 3);
   expect(lengthOfLongestSubstring("bbbbb"), 1);
   expect(lengthOfLongestSubstring("pwwkew"), 3);
   expect(lengthOfLongestSubstring("aab"), 2);
   expect(lengthOfLongestSubstring("dvdf"), 3);
 };
-
-export default lengthOfLongestSubstring;

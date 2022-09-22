@@ -1,4 +1,4 @@
-import lengthOfLongestSubstring from "./longestSubString";
+import { lengthOfLongestSubstring } from "./longestSubString";
 
 const expect = (actual: any, expected: any) => {
   if (actual !== expected) {

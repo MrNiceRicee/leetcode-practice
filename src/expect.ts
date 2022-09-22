@@ -94,7 +94,7 @@ export const expect = (actual: any, expected: any) => {
 
 // use this
 export const inputExpect = (
-  func: (input: any) => any,
+  func: (...input: any[]) => any,
   input: any,
   expected: any
 ) => {

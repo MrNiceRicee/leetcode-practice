@@ -1,7 +1,8 @@
-import { numIslandsDFS, numIslandsBFS, numIslandsTest, numIslandsPractice } from "./grid/numIslands";
+import {
+  isSubsequencePractice,
+  isSubsequenceTest,
+} from "./isSubsequence/isSubsequence";
 
-numIslandsTest(numIslandsDFS);
-numIslandsTest(numIslandsBFS);
-numIslandsTest(numIslandsPractice);
+isSubsequenceTest(isSubsequencePractice);
 // typical set up is to import the function and the test function
 // and then call the test function with the function as an argument

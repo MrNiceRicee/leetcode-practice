@@ -1,15 +1,6 @@
-// isIsomorphic algorithm
-// test case 1
-// input: s = "egg", t = "add"
-// output: true
-// test case 2
-// input: s = "foo", t = "bar"
-// output: false
-// test case 3
-// input: s = "paper", t = "title"
-// output: true
+import { expect } from "../expect";
 
-const isIsomorphic = (s: string, t: string): boolean => {
+export const isIsomorphic = (s: string, t: string): boolean => {
   // base check
   if (s.length !== t.length) {
     return false;
@@ -40,4 +31,31 @@ const isIsomorphic = (s: string, t: string): boolean => {
   return true;
 };
 
-export default isIsomorphic;
+export const isIsomorphicPractice = (s: string, t: string): boolean => {
+  if (s.length !== t.length) {
+    return false;
+  }
+  const map = new Map();
+  const set = new Set();
+
+  for (let i = 0; i < s.length; i++) {
+    if (map.has(s[i]) && map.get(s[i]) !== t[i]) {
+      return false;
+    }
+    if (!map.has(s[i]) && set.has(t[i])) {
+      return false;
+    }
+    map.set(s[i], t[i]);
+    set.add(t[i]);
+  }
+  return true;
+};
+
+export const isIsomorphicTest = (
+  testFunc: (s: string, t: string) => boolean
+) => {
+  expect(testFunc("egg", "add"), true);
+  expect(testFunc("foo", "bar"), false);
+  expect(testFunc("paper", "title"), true);
+  expect(testFunc("ab", "aa"), false);
+};
