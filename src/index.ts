@@ -1,9 +1,7 @@
-import {
-  minMeetingRooms2,
-  minMeetingRooms2Test,
-} from "./minMeetingRoom/minMeetingRooms2";
+import { numIslandsDFS, numIslandsBFS, numIslandsTest, numIslandsPractice } from "./grid/numIslands";
 
-minMeetingRooms2Test(minMeetingRooms2);
-
+numIslandsTest(numIslandsDFS);
+numIslandsTest(numIslandsBFS);
+numIslandsTest(numIslandsPractice);
 // typical set up is to import the function and the test function
 // and then call the test function with the function as an argument
