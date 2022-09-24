@@ -51,7 +51,38 @@ export const mergeTwoListPractice = (
   list1: ListNode | null,
   list2: ListNode | null
 ): ListNode | null => {
-  return list1;
+  // if (!list1) return list2;
+  // if (!list2) return list1;
+
+  // if (list1.val > list2.val) {
+  //   list2.next = mergeTwoListPractice(list1, list2.next);
+  //   return list2;
+  // }
+  // list1.next = mergeTwoListPractice(list1.next, list2);
+  // return list1;
+  const dummy = new ListNode(0);
+  let current = dummy;
+
+  while (list1 && list2) {
+    // check which is less, and then transition that one
+    if (list1.val > list2.val) {
+      current.next = list2;
+      list2 = list2.next;
+    } else {
+      current.next = list1;
+      list1 = list1.next;
+    }
+    // move current up
+    current = current.next;
+  }
+
+  if (list1) {
+    current.next = list1;
+  }
+  if (list2) {
+    current.next = list2;
+  }
+  return dummy.next;
 };
 
 export const mergeTwoListsTest = (

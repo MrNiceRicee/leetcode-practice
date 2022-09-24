@@ -26,32 +26,34 @@ export const reverseListIteration = (
   return dummy.next;
 };
 
-export const reverseListPractice = (
-  head: ListNode | null
-): ListNode | null => {
-  const previous = new ListNode(0);
+export const reverseListPractice = (head: ListNode | null): ListNode | null => {
+  const dummy = new ListNode();
   let current = head;
   while (current) {
-    const next = current.next;
-    current.next = previous.next
-    previous.next = current;
-    current = next;
+    const temp = current.next;
+    current.next = dummy.next;
+    dummy.next = current;
+    current = temp;
   }
-  return previous.next
 
+  return dummy.next;
+};
+
+const traverseList = (head: ListNode | null) => {
+  const list = [];
+  let copy = head;
+  while (copy) {
+    list.push(copy.val);
+    copy = copy.next;
+  }
+  return list;
 };
 
 export const reverseListTest = (
   testFunc: (head: ListNode | null) => ListNode | null
 ) => {
   const l1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
-  console.log(
-    "initial",
-    l1.val,
-    l1.next?.val,
-    l1.next?.next?.val,
-    l1.next?.next?.next?.val
-  );
+  console.log("initial", traverseList(l1).join(" "));
   const result = testFunc(l1);
   expect(result?.val, 4);
   expect(result?.next?.val, 3);

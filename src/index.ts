@@ -1,8 +1,5 @@
-import {
-  isSubsequencePractice,
-  isSubsequenceTest,
-} from "./isSubsequence/isSubsequence";
+import { reverseListPractice, reverseListTest } from "./LinkedList/reverseList";
 
-isSubsequenceTest(isSubsequencePractice);
+reverseListTest(reverseListPractice);
 // typical set up is to import the function and the test function
 // and then call the test function with the function as an argument
