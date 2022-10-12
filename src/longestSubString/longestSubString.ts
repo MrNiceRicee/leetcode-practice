@@ -26,10 +26,15 @@ export function lengthOfLongestSubstring(s: string): number {
   return max;
 }
 
-export const lengthOfLongestSubstringTest = () => {
-  expect(lengthOfLongestSubstring("abcabcbb"), 3);
-  expect(lengthOfLongestSubstring("bbbbb"), 1);
-  expect(lengthOfLongestSubstring("pwwkew"), 3);
-  expect(lengthOfLongestSubstring("aab"), 2);
-  expect(lengthOfLongestSubstring("dvdf"), 3);
+// export const lengthOfLongestSubStringPractice = (s: string): number => {
+// }
+
+export const lengthOfLongestSubstringTest = (
+  testFunc: (s: string) => number
+) => {
+  expect(testFunc("abcabcbb"), 3);
+  expect(testFunc("bbbbb"), 1);
+  expect(testFunc("pwwkew"), 3);
+  expect(testFunc("aab"), 2);
+  expect(testFunc("dvdf"), 3);
 };
