@@ -1,4 +1,6 @@
-const threeSum = (nums: number[]): number[][] => {
+import { expect } from "../expect";
+
+export const threeSum = (nums: number[]): number[][] => {
   // base case
   if (nums.length < 3) {
     return [];
@@ -26,11 +28,14 @@ const threeSum = (nums: number[]): number[][] => {
   return [...results];
 };
 
-const testThreeSum = () => {
+export const threeSumTest = (testFunc: (nums: number[]) => number[][]) => {
   const nums = [-1, 0, 1, 2, -1, -4];
-  console.log(threeSum(nums));
+  const results = testFunc(nums);
+  expect(results.length, 2);
+  expect(results[0][0], -1);
+  expect(results[0][1], 0);
+  expect(results[0][2], 1);
+  expect(results[1][0], -1);
+  expect(results[1][1], -1);
+  expect(results[1][2], 2);
 };
-
-testThreeSum();
-
-export default threeSum;
